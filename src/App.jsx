@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Cart from './components/Cart.jsx'
@@ -9,6 +9,20 @@ import AboutPage from './pages/AboutPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import Quote from './pages/Quote.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [pathname])
+
+  return null
+}
 
 const App = () => {
   const [cartItems, setCartItems] = useState([])
@@ -41,6 +55,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar cartCount={cartCount} onCartOpen={() => setCartOpen(true)} />
       <main>
         <Routes>
