@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import AboutUs from '../common/AboutUs.jsx'
-import flourImage from '../assets/Flour.avif'
-import riceImage from '../assets/rice.jpeg'
+import riceImage from '../assets/Grains.jpeg'
 import snacksImage from '../assets/Snacks.jpeg'
 import juicesImage from '../assets/Juices.jpeg'
 
@@ -20,7 +19,7 @@ const Home = () => {
           <div className="hero-note"><span className="note-line" /> Pantry staples, snacks and drinks</div>
         </div>
         <div className="hero-visual">
-          <div className="hero-image-wrap"><img src={flourImage} alt="Flour from the Altivis sp zoo. food range" /></div>
+          <div className="hero-image-wrap"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=85" alt="A colorful spread of fresh food" /></div>
           <div className="hero-stamp" aria-label="Altivis sp zoo., food supply"><span>GOOD THINGS</span><strong>GROW<br />HERE</strong><span>ALTIVIS SP ZOO. · FOOD SUPPLY</span></div>
           <span className="hero-index">01 / PANTRY ESSENTIALS</span>
         </div>

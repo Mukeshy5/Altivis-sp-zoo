@@ -12,15 +12,21 @@ const Navbar = ({ cartCount, onCartOpen }) => {
           <span className="brand-mark" aria-hidden="true">A</span>
           <span className="brand-name">Altivis sp zoo.<small>FOOD SUPPLY</small></span>
         </Link>
-        <button
-          className="menu-toggle"
-          type="button"
-          aria-expanded={menuOpen}
-          aria-controls="primary-navigation"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? 'Close' : 'Menu'}
-        </button>
+        <div className="mobile-nav-actions">
+          <button className="mobile-cart-trigger" type="button" onClick={() => { closeMenu(); onCartOpen() }} aria-label={`Open cart, ${cartCount} items`}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 8H6" /><circle cx="10" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg>
+            <span className="cart-count">{cartCount}</span>
+          </button>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-expanded={menuOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? 'Close' : 'Menu'}
+          </button>
+        </div>
         <div id="primary-navigation" className={`nav-links${menuOpen ? ' is-open' : ''}`}>
           <NavLink to="/products" onClick={closeMenu}>Our products</NavLink>
           <NavLink to="/about" onClick={closeMenu}>About us</NavLink>

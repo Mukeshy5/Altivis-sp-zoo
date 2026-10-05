@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import riceImage from '../assets/rice.jpeg'
+import riceImage from '../assets/Grains.jpeg'
 import cannedImage from '../assets/Canned foods.jpeg'
 import snacksImage from '../assets/Snacks.jpeg'
 
