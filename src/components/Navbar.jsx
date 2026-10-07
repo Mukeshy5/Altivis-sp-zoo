@@ -30,6 +30,7 @@ const Navbar = ({ cartCount, onCartOpen }) => {
         <div id="primary-navigation" className={`nav-links${menuOpen ? ' is-open' : ''}`}>
           <NavLink to="/products" onClick={closeMenu}>Our products</NavLink>
           <NavLink to="/about" onClick={closeMenu}>About us</NavLink>
+          <NavLink to="/pricing" onClick={closeMenu}>Pricing</NavLink>
           <button className="cart-trigger" type="button" onClick={() => { closeMenu(); onCartOpen() }} aria-label={`Open cart, ${cartCount} items`}>
             Cart <span className="cart-count">{cartCount}</span>
           </button>

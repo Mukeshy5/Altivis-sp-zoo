@@ -7,6 +7,7 @@ import Home from './components/Home.jsx'
 import ProductsPage from './pages/ProductsPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
+import PricingPage from './pages/PricingPage.jsx'
 import Quote from './pages/Quote.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
 
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="/products" element={<ProductsPage onAddToCart={addToCart} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/quote" element={<Quote onCartOpen={() => setCartOpen(true)} />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="*" element={<section className="not-found section-pad"><p className="eyebrow">PAGE NOT FOUND</p><h1>Let's get you <em>back on track.</em></h1><Link className="button button-dark" to="/">Back to home <span aria-hidden="true">↗</span></Link></section>} />
