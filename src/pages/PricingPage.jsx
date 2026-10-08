@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom'
+import { formatCurrency } from '../common/currency.js'
 
 const plans = [
   {
     name: 'Starter',
     label: 'For smaller orders',
     description: 'A simple way to stock up on everyday essentials for a small team or business.',
-    price: 'From €150',
+    price: 150,
     features: ['Mixed pantry staples', 'Snacks and drinks', 'Flexible product selection'],
   },
   {
     name: 'Business',
     label: 'Most requested',
     description: 'A dependable range for regular food and drink orders with more room to tailor the selection.',
-    price: 'From €350',
+    price: 350,
     features: ['Larger mixed orders', 'Priority product matching', 'Regular enquiry support'],
     featured: true,
   },
@@ -20,12 +21,12 @@ const plans = [
     name: 'Wholesale',
     label: 'For larger supply needs',
     description: 'A tailored approach for larger volumes, recurring requirements and broader product lists.',
-    price: 'Let’s talk',
+    price: null,
     features: ['Volume-based pricing', 'Custom product lists', 'Recurring supply enquiries'],
   },
 ]
 
-const PricingPage = () => (
+const PricingPage = ({ currency }) => (
   <>
     <section className="page-intro pricing-intro section-pad">
       <p className="eyebrow">SIMPLE, FLEXIBLE PRICING</p>
@@ -48,7 +49,7 @@ const PricingPage = () => (
             <p className="pricing-label">{plan.label}</p>
             <h3>{plan.name}</h3>
             <p className="pricing-description">{plan.description}</p>
-            <strong className="pricing-price">{plan.price}</strong>
+            <strong className="pricing-price">{plan.price ? `From ${formatCurrency(plan.price, currency)}` : 'Let’s talk'}</strong>
             <ul>
               {plan.features.map((feature) => <li key={feature}>{feature}</li>)}
             </ul>

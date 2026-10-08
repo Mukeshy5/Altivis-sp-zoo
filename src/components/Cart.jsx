@@ -1,4 +1,6 @@
-const Cart = ({ items, isOpen, onClose, onChangeQuantity, onRemove }) => {
+import { formatCurrency } from '../common/currency.js'
+
+const Cart = ({ items, isOpen, onClose, onChangeQuantity, onRemove, currency }) => {
   if (!isOpen) return null
 
   const itemCount = items.reduce((total, item) => total + item.quantity, 0)
@@ -52,7 +54,7 @@ const Cart = ({ items, isOpen, onClose, onChangeQuantity, onRemove }) => {
                     </div>
                   </div>
                   <div className="cart-item-actions">
-                    <strong>× {item.quantity}</strong>
+                    <strong>{formatCurrency(item.price * item.quantity, currency)}</strong>
                     <button className="remove-item" type="button" onClick={() => onRemove(item.name)}>Remove</button>
                   </div>
                 </article>

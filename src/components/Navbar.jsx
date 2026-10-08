@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 
-const Navbar = ({ cartCount, onCartOpen }) => {
+const Navbar = ({ cartCount, currency, currencies, onCurrencyChange, onCartOpen }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
 
@@ -30,6 +30,12 @@ const Navbar = ({ cartCount, onCartOpen }) => {
         <div id="primary-navigation" className={`nav-links${menuOpen ? ' is-open' : ''}`}>
           <NavLink to="/products" onClick={closeMenu}>Our products</NavLink>
           <NavLink to="/about" onClick={closeMenu}>About us</NavLink>
+          <label className="currency-picker">
+            <span>Currency</span>
+            <select value={currency} onChange={(event) => onCurrencyChange(event.target.value)} aria-label="Choose currency">
+              {Object.values(currencies).map(({ code }) => <option key={code} value={code}>{code}</option>)}
+            </select>
+          </label>
           <button className="cart-trigger" type="button" onClick={() => { closeMenu(); onCartOpen() }} aria-label={`Open cart, ${cartCount} items`}>
             Cart <span className="cart-count">{cartCount}</span>
           </button>

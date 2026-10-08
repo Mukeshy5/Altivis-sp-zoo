@@ -10,6 +10,7 @@ import ContactPage from './pages/ContactPage.jsx'
 import PricingPage from './pages/PricingPage.jsx'
 import Quote from './pages/Quote.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import { currencies } from './common/currency.js'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation()
@@ -28,6 +29,7 @@ const ScrollToTop = () => {
 const App = () => {
   const [cartItems, setCartItems] = useState([])
   const [cartOpen, setCartOpen] = useState(false)
+  const [currency, setCurrency] = useState('USD')
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0)
 
   const addToCart = (product) => {
@@ -57,14 +59,20 @@ const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Navbar cartCount={cartCount} onCartOpen={() => setCartOpen(true)} />
+      <Navbar
+        cartCount={cartCount}
+        currency={currency}
+        currencies={currencies}
+        onCurrencyChange={setCurrency}
+        onCartOpen={() => setCartOpen(true)}
+      />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductsPage onAddToCart={addToCart} />} />
+          <Route path="/products" element={<ProductsPage currency={currency} onAddToCart={addToCart} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/pricing" element={<PricingPage currency={currency} />} />
           <Route path="/quote" element={<Quote onCartOpen={() => setCartOpen(true)} />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="*" element={<section className="not-found section-pad"><p className="eyebrow">PAGE NOT FOUND</p><h1>Let's get you <em>back on track.</em></h1><Link className="button button-dark" to="/">Back to home <span aria-hidden="true">↗</span></Link></section>} />
@@ -77,6 +85,7 @@ const App = () => {
         onClose={() => setCartOpen(false)}
         onChangeQuantity={changeQuantity}
         onRemove={removeFromCart}
+        currency={currency}
       />
     </BrowserRouter>
   )
