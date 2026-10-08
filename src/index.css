@@ -224,30 +224,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .contact-page-intro { padding-bottom: 65px; }
 .contact-next { display: flex; align-items: center; justify-content: space-between; gap: 22px; background: #eef1e8; }
 .contact-next p { margin: 0; color: #606a5b; font-size: 14px; }
-.pricing-intro { padding-bottom: 68px; }
-.pricing-section { background: var(--paper); }
-.pricing-grid { display: grid; margin-top: 52px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
-.pricing-card { position: relative; display: flex; min-height: 455px; padding: 30px 28px 27px; flex-direction: column; border: 1px solid var(--line); background: #fbfcf8; }
-.pricing-card-featured { border-color: var(--green); color: var(--paper); background: var(--green); }
-.pricing-badge { position: absolute; top: 0; right: 0; padding: 8px 11px; color: var(--green); background: var(--leaf); font-size: 9px; font-weight: 800; letter-spacing: .08em; }
-.pricing-label { margin: 0 0 17px; color: #7b8476; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.pricing-card-featured .pricing-label { color: #c4ccbf; }
-.pricing-card h3 { margin: 0; font-family: var(--display); font-size: 35px; font-weight: 400; }
-.pricing-description { min-height: 76px; margin: 15px 0 22px; color: #606a5b; font-size: 14px; line-height: 1.7; }
-.pricing-card-featured .pricing-description { color: #c4ccbf; }
-.pricing-price { padding: 17px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--green); font-family: var(--display); font-size: 25px; font-weight: 400; }
-.pricing-card-featured .pricing-price { border-color: rgba(246, 247, 241, .22); color: var(--leaf); }
-.pricing-card ul { display: grid; gap: 11px; margin: 23px 0 25px; padding: 0; list-style: none; color: #606a5b; font-size: 13px; }
-.pricing-card li::before { margin-right: 9px; color: #83933c; content: '＋'; font-weight: 800; }
-.pricing-card-featured li { color: #d7ded2; }
-.pricing-card .button { width: 100%; margin-top: auto; }
-.button-outline { color: var(--green); background: transparent; border: 1px solid var(--green); }
-.button-outline:hover { color: var(--paper); background: var(--green); }
-.pricing-note { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; background: #eef1e8; }
-.pricing-note h2 { margin: 0; font-family: var(--display); font-size: 54px; font-weight: 400; line-height: 1.06; }
-.pricing-note h2 em { color: #73842c; font-weight: 400; }
-.pricing-note > div:last-child { align-self: end; max-width: 480px; }
-.pricing-note > div:last-child p { margin: 0 0 20px; color: #606a5b; font-size: 15px; line-height: 1.8; }
 .quote-page { min-height: 75vh; background: #eef1e8; background-image: radial-gradient(#dce2d4 0.7px, transparent .7px); background-size: 18px 18px; }
 .quote-steps { display: grid; margin-top: 56px; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #cfd6c8; border-bottom: 1px solid #cfd6c8; }
 .quote-steps > div { padding: 24px 26px 24px 0; }
