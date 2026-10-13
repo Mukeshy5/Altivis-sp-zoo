@@ -10,6 +10,7 @@ import ContactPage from './pages/ContactPage.jsx'
 import PricingPage from './pages/PricingPage.jsx'
 import Quote from './pages/Quote.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import DeveloperPage from './pages/DeveloperPage.jsx'
 import { currencies } from './common/currency.js'
 
 const ScrollToTop = () => {
@@ -75,6 +76,7 @@ const App = () => {
           <Route path="/pricing" element={<PricingPage currency={currency} />} />
           <Route path="/quote" element={<Quote onCartOpen={() => setCartOpen(true)} />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/developer" element={<DeveloperPage />} />
           <Route path="*" element={<section className="not-found section-pad"><p className="eyebrow">PAGE NOT FOUND</p><h1>Let's get you <em>back on track.</em></h1><Link className="button button-dark" to="/">Back to home <span aria-hidden="true">↗</span></Link></section>} />
         </Routes>
       </main>
